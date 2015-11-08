@@ -1,22 +1,34 @@
 {
-  "name": "minami",
-  "version": "1.1.1",
-  "description": "Clean and minimal JSDoc 3 Template / Theme",
+  "name": "namis",
+  "version": "1.0.0",
+  "description": "Clean and minimal JSDoc 3 Template / Theme, based on Minami",
   "main": "publish.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Nijikokun/minami.git"
+    "url": "git+https://github.com/zudd/namis.git"
   },
-  "author": "Nijiko Yonskai <nijikokun@gmail.com>",
-  "licenses": [{
-    "type": "Apache-2.0",
-    "url": "http://www.apache.org/licenses/LICENSE-2.0"
-  }],
+  "author": {
+    "name": "Hung Luu",
+    "email": "luuhug@gmail.com"
+  },
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
   "bugs": {
-    "url": "https://github.com/Nijikokun/minami/issues"
+    "url": "https://github.com/zudd/namis/issues"
   },
-  "homepage": "https://github.com/Nijikokun/minami"
+  "homepage": "https://github.com/zudd/namis",
+  "maintainers": [
+    {
+      "name": "Hung Luu",
+      "email": "luuhug@gmail.com"
+    }
+  ],
+  "directories": {}
 }

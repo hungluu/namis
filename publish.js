@@ -290,7 +290,7 @@ function attachModuleSymbols(doclets, modules) {
 function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
     var nav = '';
 
-    if (items && items.length) {
+    if (items.length) {
         var itemsNav = '';
 
         items.forEach(function(item) {
@@ -298,17 +298,23 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
             var members = find({kind:'member', memberof: item.longname});
 
             if ( !hasOwnProp.call(item, 'longname') ) {
-                itemsNav += '<li>' + linktoFn('', item.name);
+                // @ref https://github.com/jsdoc3/jsdoc/blob/master/lib/jsdoc/util/templateHelper.js#L365
+                itemsNav += '<li>' + linktoFn('', item.name, 'className');
                 itemsNav += '</li>';
             } else if ( !hasOwnProp.call(itemsSeen, item.longname) ) {
-                itemsNav += '<li>' + linktoFn(item.longname, item.name.replace(/^module:/, ''));
+                // @ref https://github.com/jsdoc3/jsdoc/blob/master/lib/jsdoc/util/templateHelper.js#L365
+                itemsNav += '<li>' + linktoFn(item.longname, item.name.replace(/^module:/, ''), 'className');
                 if (methods.length) {
                     itemsNav += "<ul class='methods'>";
 
                     methods.forEach(function (method) {
-                        itemsNav += "<li data-type='method'>";
-                        itemsNav += linkto(method.longname, method.name);
-                        itemsNav += "</li>";
+                        // remove all inherited methods
+                        if(!method.inherits || method.override){
+                            itemsNav += "<li data-type='method'>";
+                            // @ref https://github.com/jsdoc3/jsdoc/blob/master/lib/jsdoc/util/templateHelper.js#L365
+                            itemsNav += linkto(method.longname, method.name, 'methodName');
+                            itemsNav += "</li>";
+                        }
                     });
 
                     itemsNav += "</ul>";
@@ -319,7 +325,7 @@ function buildMemberNav(items, itemHeading, itemsSeen, linktoFn) {
         });
 
         if (itemsNav !== '') {
-            nav += '<h3>' + itemHeading + '</h3><ul>' + itemsNav + '</ul>';
+            nav += '<h3 class="group-title">' + itemHeading + '</h3><ul>' + itemsNav + '</ul>';
         }
     }
 
@@ -349,9 +355,14 @@ function linktoExternal(longName, name) {
  * @return {string} The HTML for the navigation sidebar.
  */
 function buildNav(members) {
-    var nav = '<h2><a href="index.html">Home</a></h2>';
+    //var nav = '<h2><a href="index.html">Home</a></h2>';
+    var nav = '<h3 class="group-title"><a href="index.html">&#x3C; Home &#x3E;</a></h3>';
+    nav += '<input class="search" placeholder="Search" type="text">';
     var seen = {};
     var seenTutorials = {};
+
+    // supports search
+    nav += '<div class="list">';
 
     nav += buildMemberNav(members.classes, 'Classes', seen, linkto);
     nav += buildMemberNav(members.modules, 'Modules', {}, linkto);
@@ -374,12 +385,15 @@ function buildNav(members) {
 
         if (!globalNav) {
             // turn the heading into a link so you can actually get to the global page
+            // @https://github.com/jsdoc3/jsdoc/blob/master/lib/jsdoc/util/templateHelper.js#L365
             nav += '<h3>' + linkto('global', 'Global') + '</h3>';
         }
         else {
             nav += '<h3>Global</h3><ul>' + globalNav + '</ul>';
         }
     }
+
+    nav += '</div>';
 
     return nav;
 }
@@ -556,8 +570,8 @@ exports.publish = function(taffyData, opts, tutorials) {
     members.tutorials = tutorials.children;
 
     // output pretty-printed source files by default
-    var outputSourceFiles = conf.default && conf.default.outputSourceFiles !== false 
-        ? true 
+    var outputSourceFiles = conf.default && conf.default.outputSourceFiles !== false
+        ? true
         : false;
 
     // add template helpers
@@ -577,8 +591,8 @@ exports.publish = function(taffyData, opts, tutorials) {
         generateSourceFiles(sourceFiles, opts.encoding);
     }
 
-    if (members.globals.length) { 
-        generate('', 'Global', [{kind: 'globalobj'}], globalUrl); 
+    if (members.globals.length) {
+        generate('', 'Global', [{kind: 'globalobj'}], globalUrl);
     }
 
     // index page displays information from package.json and lists files
@@ -655,6 +669,6 @@ exports.publish = function(taffyData, opts, tutorials) {
             saveChildren(child);
         });
     }
-    
+
     saveChildren(tutorials);
 };

@@ -1,0 +1,29 @@
+{
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc", "closure"]
+    },
+    "source": {
+        "include": [".", "README.md", "package.json"],
+        "includePattern": "test.js$",
+        "excludePattern": "docs"
+    },
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "templates": {
+        "cleverLinks": true,
+        "monospaceLinks": true,
+        "systemName": "remoteFileExplorer",
+        "copyright": "2015",
+        "linenums": true,
+        "collapseSymbols": true
+    },
+    "opts": {
+        "destination": "./docs/",
+        "encoding": "utf8",
+        "private": false,
+        "recurse": true,
+        "template": "./node_modules/namis"
+    }
+}

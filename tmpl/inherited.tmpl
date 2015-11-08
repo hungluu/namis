@@ -1,0 +1,33 @@
+<?js
+var data = obj;
+var self = this;
+var defaultObjectClass = '';
+
+// Check if the default value is an object or array; if so, apply code highlighting
+if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvaluetype === 'array')) {
+    data.defaultvalue = "<pre class=\"prettyprint\"><code>" + data.defaultvalue + "</code></pre>";
+    defaultObjectClass = ' class="object-value"';
+}
+?>
+
+<dl class="details">
+
+    <?js if (data.version) {?>
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li><?js= version ?></li></ul></dd>
+    <?js } ?>
+
+    <?js if (data.since) {?>
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li><?js= since ?></li></ul></dd>
+    <?js } ?>
+
+    <?js if (data.inherited && data.inherits && !data.overrides) { ?>
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <?js= this.linkto(data.inherits, this.htmlsafe(data.inherits)) ?>
+    </li></ul></dd>
+    <?js } ?>
+</dl>
+
+ <dl class="inherited-line"></dl>
