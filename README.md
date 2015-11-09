@@ -2,7 +2,7 @@
 
 A clean, responsive documentation template theme for JSDoc 3, based on [Minami](https://github.com/Nijikokun/minami)
 
-![Namis Screenshot](http://s7.postimg.org/658hspbzd/image.png)
+![Namis Screenshot](http://oi68.tinypic.com/j0i1dj.jpg)
 
 ## Uses
 
