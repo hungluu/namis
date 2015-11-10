@@ -2,13 +2,17 @@
 
 A clean, responsive documentation template theme for JSDoc 3, based on [Minami](https://github.com/Nijikokun/minami)
 
-![Namis Screenshot](http://oi68.tinypic.com/j0i1dj.jpg)
+![Namis Screenshot](http://s7.postimg.org/658hspbzd/image.png)
 
 ## Uses
 
 - [the Taffy Database library](http://taffydb.com/)
 - [Underscore Template library](http://documentcloud.github.com/underscore/#template)
 - [Montserrat](http://www.google.com/fonts/specimen/Monsterrat) & Helvetica Neue
+
+## Live examples
+
+- [Honeyjs Document](https://zudd.github.io/honeyjs)
 
 ## What's new
 
