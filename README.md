@@ -12,7 +12,7 @@ A clean, responsive documentation template theme for JSDoc 3, based on [Minami](
 
 ## Live examples
 
-- [Honeyjs Document](https://zudd.github.io/honeyjs)
+- [Honeyjs Document](https://hungluu2106.github.io/honeyjs)
 
 ## What's new
 
@@ -99,7 +99,7 @@ Here is some simple steps
 
 1. Fork, then clone the repo at git@github.com:your-username/namis.git
 
-2. Push to your fork and submit a [pull request](https://github.com/zudd/namis/compare/)
+2. Push to your fork and submit a [pull request](https://github.com/hungluu2106/namis/compare/)
 
 3. Write a good commit message
 

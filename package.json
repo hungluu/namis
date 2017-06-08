@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zudd/namis.git"
+    "url": "git+https://github.com/hungluu2106/namis.git"
   },
   "author": {
     "name": "Hung Luu",
@@ -21,9 +21,9 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/zudd/namis/issues"
+    "url": "https://github.com/hungluu2106/namis/issues"
   },
-  "homepage": "https://github.com/zudd/namis",
+  "homepage": "https://github.com/hungluu2106/namis",
   "maintainers": [
     {
       "name": "Hung Luu",
@@ -54,7 +54,7 @@
       "email": "nijikokun@gmail.com"
     }
   ],
-  "readme": "# Namis\n\nA clean, responsive documentation template theme for JSDoc 3, based on [Minami](https://github.com/Nijikokun/minami)\n\n![Namis Screenshot](http://s7.postimg.org/658hspbzd/image.png)\n\n## Uses\n\n- [the Taffy Database library](http://taffydb.com/)\n- [Underscore Template library](http://documentcloud.github.com/underscore/#template)\n- [Montserrat](http://www.google.com/fonts/specimen/Monsterrat) & Helvetica Neue\n\n## What's new\n\n- Implements a search engine\n- Makes a more themeable template based on Minami, all you need to do is edit the custom.css file\n- Uses more attractive jQuery scroll plugin named [NiceScroll](https://github.com/inuyaksa/jquery.nicescroll)\n- Improves color scheme and UI\n\n## Install\n\n```bash\n$ npm install --save-dev namis\n```\n\n## Usage\n\nClone repository to your designated `jsdoc` template directory, then:\n\n```bash\n$ jsdoc entry-file.js -t path/to/namis\n```\n\n### Node.js Dependency\n\nIn your projects `package.json` file add a generate script:\n\n```json\n\"script\": {\n  \"generate-docs\": \"node_modules/.bin/jsdoc --configure .jsdoc.json --verbose\"\n}\n```\n\nIn your `.jsdoc.json` file, add a template option.\n\n```json\n\"opts\": {\n  \"template\": \"node_modules/mamis\"\n}\n```\n\n### Example JSDoc Config\n\nExample can be found on root folder of this package named jsdoc.json:\n\n```json\n{\n    \"tags\": {\n        \"allowUnknownTags\": true,\n        \"dictionaries\": [\"jsdoc\", \"closure\"]\n    },\n    \"source\": {\n        \"include\": [\".\", \"README.md\", \"package.json\"],\n        \"includePattern\": \"test.js$\",\n        \"excludePattern\": \"docs\"\n    },\n    \"plugins\": [\n        \"plugins/markdown\"\n    ],\n    \"templates\": {\n        \"cleverLinks\": true,\n        \"monospaceLinks\": true,\n        \"systemName\": \"remoteFileExplorer\",\n        \"copyright\": \"2015\",\n        \"linenums\": true,\n        \"collapseSymbols\": true\n    },\n    \"opts\": {\n        \"destination\": \"./docs/\",\n        \"encoding\": \"utf8\",\n        \"private\": false,\n        \"recurse\": true,\n        \"template\": \"./node_modules/namis\"\n    }\n}\n```\n\n## License\n\nLicensed under the Apache2 license.\n\n## Contribution\n\nHere is some simple steps\n\n1. Fork, then clone the repo at git@github.com:your-username/namis.git\n\n2. Push to your fork and submit a [pull request](https://github.com/zudd/namis/compare/)\n\n3. Write a good commit message\n\n\nEnjoy.",
+  "readme": "# Namis\n\nA clean, responsive documentation template theme for JSDoc 3, based on [Minami](https://github.com/Nijikokun/minami)\n\n![Namis Screenshot](http://s7.postimg.org/658hspbzd/image.png)\n\n## Uses\n\n- [the Taffy Database library](http://taffydb.com/)\n- [Underscore Template library](http://documentcloud.github.com/underscore/#template)\n- [Montserrat](http://www.google.com/fonts/specimen/Monsterrat) & Helvetica Neue\n\n## What's new\n\n- Implements a search engine\n- Makes a more themeable template based on Minami, all you need to do is edit the custom.css file\n- Uses more attractive jQuery scroll plugin named [NiceScroll](https://github.com/inuyaksa/jquery.nicescroll)\n- Improves color scheme and UI\n\n## Install\n\n```bash\n$ npm install --save-dev namis\n```\n\n## Usage\n\nClone repository to your designated `jsdoc` template directory, then:\n\n```bash\n$ jsdoc entry-file.js -t path/to/namis\n```\n\n### Node.js Dependency\n\nIn your projects `package.json` file add a generate script:\n\n```json\n\"script\": {\n  \"generate-docs\": \"node_modules/.bin/jsdoc --configure .jsdoc.json --verbose\"\n}\n```\n\nIn your `.jsdoc.json` file, add a template option.\n\n```json\n\"opts\": {\n  \"template\": \"node_modules/mamis\"\n}\n```\n\n### Example JSDoc Config\n\nExample can be found on root folder of this package named jsdoc.json:\n\n```json\n{\n    \"tags\": {\n        \"allowUnknownTags\": true,\n        \"dictionaries\": [\"jsdoc\", \"closure\"]\n    },\n    \"source\": {\n        \"include\": [\".\", \"README.md\", \"package.json\"],\n        \"includePattern\": \"test.js$\",\n        \"excludePattern\": \"docs\"\n    },\n    \"plugins\": [\n        \"plugins/markdown\"\n    ],\n    \"templates\": {\n        \"cleverLinks\": true,\n        \"monospaceLinks\": true,\n        \"systemName\": \"remoteFileExplorer\",\n        \"copyright\": \"2015\",\n        \"linenums\": true,\n        \"collapseSymbols\": true\n    },\n    \"opts\": {\n        \"destination\": \"./docs/\",\n        \"encoding\": \"utf8\",\n        \"private\": false,\n        \"recurse\": true,\n        \"template\": \"./node_modules/namis\"\n    }\n}\n```\n\n## License\n\nLicensed under the Apache2 license.\n\n## Contribution\n\nHere is some simple steps\n\n1. Fork, then clone the repo at git@github.com:your-username/namis.git\n\n2. Push to your fork and submit a [pull request](https://github.com/hungluu2106/namis/compare/)\n\n3. Write a good commit message\n\n\nEnjoy.",
   "readmeFilename": "README.md",
   "gitHead": "2a3018e3e954166b7262cd0a0c27ebb1ab41fa3e",
   "_id": "namis@1.0.2",
